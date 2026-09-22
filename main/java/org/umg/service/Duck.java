@@ -1,22 +1,23 @@
 package org.umg.service;
 
 import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 
-@Getter
-@RequiredArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public abstract class Duck {
 
-    protected final FlyBehavior fb;
+    protected FlyBehavior fb;
 
     public void swim() {
         System.out.println("Puedo nadar.");
     }
 
 
-    public void performFly()
-    {
+    public void setFB(FlyBehavior fb) {
+        this.fb = fb;
+    }
+
+    public void performFly() {
         fb.fly();
     }
 

@@ -54,8 +54,11 @@ public class DuckTest {
     }
 
     @Test
-    public void testGetFb() {
-        assertTrue(duck.getFb() instanceof FlyNoWay);
+    public void testSetFB() {
+        duck.setFB(new FlyWithWings());
+        duck.performFly();
+
+        assertTrue(output.toString().contains("Estoy volando con mis alas."));
     }
 
     @Test
